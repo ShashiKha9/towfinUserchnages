@@ -39,11 +39,61 @@ class _HomeDrawerState extends State<HomeDrawer> {
   void setDrawerListArray() {
     drawerList = <DrawerList>[
       DrawerList(
-        // index: DrawerIndex.YourServices,
-        labelName: 'Drop down',
+        index: DrawerIndex.YourServices,
+        labelName: 'Your Services',
         icon: Icon(Icons.select_all_rounded),
+
+
+
         isDropDown: true,
+        isIcon:  false,
       ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
+        labelName: 'Wallet',
+        icon: Icon(Icons.home_repair_service_outlined),
+
+
+        isDropDown: true,
+        isIcon:  false,
+      ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
+        labelName: 'Home',
+        icon: Icon(Icons.home_repair_service_outlined),
+
+
+        isDropDown: true,
+        isIcon:  false,
+      ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
+        labelName: 'Dispute',
+        icon: Icon(Icons.home_repair_service_outlined),
+
+
+        isDropDown: true,
+        isIcon:  false,
+      ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
+        labelName: 'Settings',
+        icon: Icon(Icons.home_repair_service_outlined),
+
+
+        isDropDown: true,
+        isIcon:  false,
+      ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
+        labelName: 'Help',
+        icon: Icon(Icons.home_repair_service_outlined),
+
+
+        isDropDown: true,
+        isIcon:  false,
+      ),
+
       // DrawerList(
       //   index: DrawerIndex.YourServices,
       //   labelName: 'Your Services',
@@ -58,6 +108,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         index: DrawerIndex.Wallet,
         labelName: 'Wallet',
         icon: Icon(Icons.account_balance_wallet_outlined),
+
       ),
       DrawerList(
         index: DrawerIndex.HOME,
@@ -346,26 +397,32 @@ class _HomeDrawerState extends State<HomeDrawer> {
               width: 24,
               height: 24,
               child: Image.asset(listData.imageName, color: widget.screenIndex == listData.index ? Colors.white : AppTheme.white),
-            )
-                : Icon(listData.icon.icon, color: widget.screenIndex == listData.index ? Colors.white : AppTheme.white),
+            ):
+                listData.isIcon ?
+               Container(
+               child:  Icon(listData.icon.icon, color: widget.screenIndex == listData.index ? Colors.white : AppTheme.white),
+               ) :
             const Padding(
               padding: EdgeInsets.all(4.0),
             ),
             listData.isDropDown
             ?
-            ExpansionTile(title: new Text("Your Services",
+            ExpansionTile(title: new Text(listData.labelName,
             style: TextStyle(color: Colors.white),),
-              leading: Icon(Icons.select_all_rounded,color: Colors.white,),
+              trailing: Icon(Icons.keyboard_arrow_down_outlined,
+              color: Colors.white,),
+              leading: Icon(listData.icon.icon,color: Colors.white,),
               children: [
                 ListTile(
-
-                   title: Text("Past Services",
+                   title: Text("DUEFYU",
                      style: TextStyle(color: Colors.white),),
+                  onTap:(){
+                     setState(() {
 
-
+                     });
+                  },
 
                      ),
-
 
                 ListTile(
                   title: Text("Upcoming Services",
@@ -378,6 +435,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 
               ],
             ):
+
                 Row(
                   children: [
                     Text(
@@ -415,6 +473,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                         );
                       },
                     )
+
                         : const SizedBox()
                   ],
                 )
@@ -448,13 +507,17 @@ class DrawerList {
     this.icon,
     this.index,
     this.imageName = '',
-    this.isDropDown = false
+    this.isDropDown = false,
+    this.isIcon = true,
+    this.subName
   });
 
   String labelName;
+  String subName;
   Icon icon;
   bool isAssetsImage;
   String imageName;
   DrawerIndex index;
   bool isDropDown;
+  bool isIcon;
 }

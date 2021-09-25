@@ -26,7 +26,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../navigation_home_screen.dart';
 
-class PastTripHistoryBloc {
+class PastServiceScreen {
   final PastHistoryRepo _pastHistoryRepo = PastHistoryRepo();
   final BehaviorSubject<PastTripListRespo> _subjectPastHistory =
   BehaviorSubject<PastTripListRespo>();
@@ -71,4 +71,4 @@ Future<String> _getId() async {
   }
 }
 
-final bloc = PastTripHistoryBloc();
+final bloc = PastServiceScreen();

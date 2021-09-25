@@ -246,15 +246,19 @@ class _WalletScreenState extends State<WalletScreen>
                                                 height: 10,
                                               ),
                                               Center(
-                                                child: Text(
-                                                  'Add Amount',
-                                                  style: TextStyle(
-                                                      color: AppTheme.nearlyBlack,
-                                                      fontFamily: AppTheme.fontName,
-                                                      fontWeight: FontWeight.w400,
-                                                      fontSize: 16),
-                                                  textAlign: TextAlign.center,
-                                                ),
+                                                child:
+                                                    LayoutBuilder(builder: (context,constraints){
+                                                    return  Text(
+                                                        'Add Amount',
+                                                        style: TextStyle(
+                                                            color: AppTheme.nearlyBlack,
+                                                            fontFamily: AppTheme.fontName,
+                                                            fontWeight: FontWeight.w400,
+                                                            fontSize: constraints.maxWidth/8.5),
+                                                        textAlign: TextAlign.center,
+                                                      );
+          })
+
                                               )
                                             ],
                                           )
@@ -305,15 +309,20 @@ class _WalletScreenState extends State<WalletScreen>
                                               height: 10,
                                             ),
                                             Center(
-                                              child: Text(
-                                                'Wallet History',
-                                                style: TextStyle(
-                                                    color: AppTheme.nearlyBlack,
-                                                    fontFamily: AppTheme.fontName,
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 16),
-                                                textAlign: TextAlign.center,
-                                              ),
+
+                                              child: LayoutBuilder(builder: (context,constraints){
+                                              return  Text(
+                                                  'Wallet History',
+                                                  style: TextStyle(
+                                                      color: AppTheme.nearlyBlack,
+                                                      fontFamily: AppTheme.fontName,
+                                                      fontWeight: FontWeight.w400,
+                                                      fontSize: constraints.maxWidth/8.5),
+                                                  textAlign: TextAlign.center,
+                                                );
+
+          })
+
                                             )
                                           ],
                                         )
@@ -367,34 +376,38 @@ class _WalletScreenState extends State<WalletScreen>
                                   bottomRight: Radius.lerp(
                                       Radius.circular(25), Radius.circular(25), 5)),
                             ),
-                            child: Padding(
-                                padding: EdgeInsets.all(20),
+                              child: Padding(
+                                padding: EdgeInsets.all(9),
                                 child:Row(
-                                  mainAxisSize: MainAxisSize.max,
+                                  // mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(children: <Widget>[
-                                      Text(
-                                        "Add Card",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
+                                      LayoutBuilder(builder: (context,constarints){
+                                        return Text(
+                                          "  Add Card",
+                                          style: TextStyle(
+                                            fontSize: constarints.maxHeight*0.5,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        );
+                                      })
+
                                     ]),
                                     Icon(
                                       Icons.add,
                                       color: Colors.grey,
                                     ),
+
                                   ],
                                 ),),
-                          ),
+
                         ),
                       )
 
 
-
+)
                       ],
             ));
           }

@@ -1,9 +1,11 @@
+import 'package:roadrunner/HomePage/cancelledservices_screen.dart';
 import 'package:roadrunner/HomePage/customerProfile.dart';
 import 'package:roadrunner/HomePage/edit_account.dart';
 import 'package:roadrunner/LoginSignup/Welcome/welcome_screen.dart';
 import 'package:roadrunner/Utils/helperutils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:roadrunner/bloc/PastTripHistoryBloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../app_theme.dart';
@@ -42,11 +44,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(Icons.select_all_rounded),
         isDropDown: true,
       ),
-      DrawerList(
-        index: DrawerIndex.YourServices,
-        labelName: 'Your Services',
-        icon: Icon(Icons.select_all_rounded),
-      ),
+      // DrawerList(
+      //   index: DrawerIndex.YourServices,
+      //   labelName: 'Your Services',
+      //   icon: Icon(Icons.select_all_rounded),
+      // ),
       /*DrawerList(
         index: DrawerIndex.Payment,
         labelName: 'Payment',
@@ -61,6 +63,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         index: DrawerIndex.HOME,
         labelName: 'Home',
         icon: Icon(CupertinoIcons.home),
+
       ),
      /* DrawerList(
         index: DrawerIndex.Passbook,
@@ -68,6 +71,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(CupertinoIcons.book),
       ),*/
       DrawerList(
+
         index: DrawerIndex.Settings,
         labelName: 'Settings',
         icon: Icon(Icons.settings),
@@ -349,12 +353,29 @@ class _HomeDrawerState extends State<HomeDrawer> {
             ),
             listData.isDropDown
             ?
-            ExpansionTile(title: new Text("Your Services"),
-              children: <Widget>[
-                new Text("PastServices"),
-                new Text("PostServices"),
-                new Text("CompletedServices"),
+            ExpansionTile(title: new Text("Your Services",
+            style: TextStyle(color: Colors.white),),
+              leading: Icon(Icons.select_all_rounded,color: Colors.white,),
+              children: [
+                ListTile(
 
+                   title: Text("Past Services",
+                     style: TextStyle(color: Colors.white),),
+
+
+
+                     ),
+
+
+                ListTile(
+                  title: Text("Upcoming Services",
+                    style: TextStyle(color: Colors.white),),
+                ),
+                ListTile(
+                  title: Text("Cancelled Services",
+                    style: TextStyle(color: Colors.white),),
+                ),
+                
               ],
             ):
                 Row(

@@ -43,61 +43,55 @@ class _HomeDrawerState extends State<HomeDrawer> {
         index: DrawerIndex.YourServices,
         labelName: 'Your Services',
         icon: Icon(Icons.select_all_rounded),
-
-
-
-
-
         isDropDown: true,
         isIcon:  false,
+        subList: ["20", "3005", "2"],
       ),
       DrawerList(
         index: DrawerIndex.YourServices,
         labelName: 'Wallet',
         icon: Icon(Icons.account_balance_wallet_outlined),
-
-
-
-
         isDropDown: true,
         isIcon:  false,
+        subList: ["gdyus", "hfdg", "gdgrty"],
+
       ),
-      DrawerList(
-        index: DrawerIndex.YourServices,
-        labelName: 'Home',
-        icon: Icon(CupertinoIcons.home),
-
-
-        isDropDown: true,
-        isIcon:  false,
-      ),
-      DrawerList(
-        index: DrawerIndex.YourServices,
-        labelName: 'Dispute',
-        icon: Icon(Icons.home_repair_service_outlined),
-
-
-        isDropDown: true,
-        isIcon:  false,
-      ),
-      DrawerList(
-        index: DrawerIndex.YourServices,
-        labelName: 'Settings',
-        icon: Icon(Icons.settings),
-
-
-        isDropDown: true,
-        isIcon:  false,
-      ),
-      DrawerList(
-        index: DrawerIndex.YourServices,
-        labelName: 'Help',
-        icon: Icon(CupertinoIcons.info),
-
-
-        isDropDown: true,
-        isIcon:  false,
-      ),
+      // DrawerList(
+      //   index: DrawerIndex.YourServices,
+      //   labelName: 'Home',
+      //   icon: Icon(CupertinoIcons.home),
+      //
+      //
+      //   isDropDown: true,
+      //   isIcon:  false,
+      // ),
+      // DrawerList(
+      //   index: DrawerIndex.YourServices,
+      //   labelName: 'Dispute',
+      //   icon: Icon(Icons.home_repair_service_outlined),
+      //
+      //
+      //   isDropDown: true,
+      //   isIcon:  false,
+      // ),
+      // DrawerList(
+      //   index: DrawerIndex.YourServices,
+      //   labelName: 'Settings',
+      //   icon: Icon(Icons.settings),
+      //
+      //
+      //   isDropDown: true,
+      //   isIcon:  false,
+      // ),
+      // DrawerList(
+      //   index: DrawerIndex.YourServices,
+      //   labelName: 'Help',
+      //   icon: Icon(CupertinoIcons.info),
+      //
+      //
+      //   isDropDown: true,
+      //   isIcon:  false,
+      // ),
 
       // DrawerList(
       //   index: DrawerIndex.YourServices,
@@ -425,7 +419,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 itemBuilder: (context,index) {
                   return
                     ListTile(
-                        title: Text(items[index],style: TextStyle(
+                        title: Text(listData.subList[index],style: TextStyle(
                           color: Colors.white
                         ),),
                   onTap:(){
@@ -434,24 +428,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   });
                   },
 
-
-
                     );
                 }
                     ),
 
-
-
-
-                ListTile(
-                  title: Text("Upcoming Services",
-                    style: TextStyle(color: Colors.white),),
-                ),
-                ListTile(
-                  title: Text("Cancelled Services",
-                    style: TextStyle(color: Colors.white),),
-                ),
-                
               ],
             ):
 
@@ -528,7 +508,7 @@ class DrawerList {
     this.imageName = '',
     this.isDropDown = false,
     this.isIcon = true,
-    this.list,
+    this.subList,
 
   });
 
@@ -540,6 +520,6 @@ class DrawerList {
   DrawerIndex index;
   bool isDropDown;
   bool isIcon;
-  List list;
+  List<String> subList;
 
 }

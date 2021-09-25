@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../app_theme.dart';
 
 class HomeDrawer extends StatefulWidget {
-  const HomeDrawer({Key key, this.screenIndex, this.iconAnimationController, this.callBackIndex}) : super(key: key);
+  HomeDrawer({Key key, this.screenIndex, this.iconAnimationController, this.callBackIndex}) : super(key: key);
 
   final AnimationController iconAnimationController;
   final DrawerIndex screenIndex;
@@ -23,6 +23,7 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
+  List <String>  items = ["namn","shduh","adjh"];
   List<DrawerList> drawerList;
   SharedPreferences prefs;
   @override
@@ -45,13 +46,17 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
 
 
+
+
         isDropDown: true,
         isIcon:  false,
       ),
       DrawerList(
         index: DrawerIndex.YourServices,
         labelName: 'Wallet',
-        icon: Icon(Icons.home_repair_service_outlined),
+        icon: Icon(Icons.account_balance_wallet_outlined),
+
+
 
 
         isDropDown: true,
@@ -60,7 +65,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.YourServices,
         labelName: 'Home',
-        icon: Icon(Icons.home_repair_service_outlined),
+        icon: Icon(CupertinoIcons.home),
 
 
         isDropDown: true,
@@ -78,7 +83,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.YourServices,
         labelName: 'Settings',
-        icon: Icon(Icons.home_repair_service_outlined),
+        icon: Icon(Icons.settings),
 
 
         isDropDown: true,
@@ -87,7 +92,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.YourServices,
         labelName: 'Help',
-        icon: Icon(Icons.home_repair_service_outlined),
+        icon: Icon(CupertinoIcons.info),
 
 
         isDropDown: true,
@@ -413,16 +418,30 @@ class _HomeDrawerState extends State<HomeDrawer> {
               color: Colors.white,),
               leading: Icon(listData.icon.icon,color: Colors.white,),
               children: [
-                ListTile(
-                   title: Text("DUEFYU",
-                     style: TextStyle(color: Colors.white),),
-                  onTap:(){
-                     setState(() {
 
-                     });
+                    ListView.builder(
+                      shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (context,index) {
+                  return
+                    ListTile(
+                        title: Text(items[index],style: TextStyle(
+                          color: Colors.white
+                        ),),
+                  onTap:(){
+                  setState(() {
+
+                  });
                   },
 
-                     ),
+
+
+                    );
+                }
+                    ),
+
+
+
 
                 ListTile(
                   title: Text("Upcoming Services",
@@ -509,7 +528,8 @@ class DrawerList {
     this.imageName = '',
     this.isDropDown = false,
     this.isIcon = true,
-    this.subName
+    this.list,
+
   });
 
   String labelName;
@@ -520,4 +540,6 @@ class DrawerList {
   DrawerIndex index;
   bool isDropDown;
   bool isIcon;
+  List list;
+
 }

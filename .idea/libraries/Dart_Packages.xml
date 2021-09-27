@@ -135,6 +135,13 @@
             </list>
           </value>
         </entry>
+        <entry key="equatable">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="expandable">
           <value>
             <list>
@@ -696,6 +703,7 @@
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/device_info-0.4.2+6/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/dio-3.0.10/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-1.2.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/expandable-5.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.1.2/lib" />

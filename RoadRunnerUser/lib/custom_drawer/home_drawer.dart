@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:roadrunner/HomePage/cancelledservices_screen.dart';
 import 'package:roadrunner/HomePage/customerProfile.dart';
 import 'package:roadrunner/HomePage/edit_account.dart';
+import 'package:roadrunner/HomePage/pastsservices_screen.dart';
+import 'package:roadrunner/HomePage/upcomingservices_screen.dart';
 import 'package:roadrunner/LoginSignup/Welcome/welcome_screen.dart';
 import 'package:roadrunner/Utils/helperutils.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,7 +27,7 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
-  List <String>  items = ["namn","shduh","adjh"];
+
   List<DrawerList> drawerList;
   SharedPreferences prefs;
   @override
@@ -45,7 +49,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(Icons.select_all_rounded),
         isDropDown: true,
         isIcon:  false,
-        subList: ["20", "3005", "2"],
+        subList: ["Past Services", "Upcoming Services", "Cancelled Services"],
       ),
       DrawerList(
         index: DrawerIndex.YourServices,
@@ -53,89 +57,84 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(Icons.account_balance_wallet_outlined),
         isDropDown: true,
         isIcon:  false,
-        subList: ["gdyus", "hfdg", "gdgrty"],
-
-      ),
-      // DrawerList(
-      //   index: DrawerIndex.YourServices,
-      //   labelName: 'Home',
-      //   icon: Icon(CupertinoIcons.home),
-      //
-      //
-      //   isDropDown: true,
-      //   isIcon:  false,
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.YourServices,
-      //   labelName: 'Dispute',
-      //   icon: Icon(Icons.home_repair_service_outlined),
-      //
-      //
-      //   isDropDown: true,
-      //   isIcon:  false,
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.YourServices,
-      //   labelName: 'Settings',
-      //   icon: Icon(Icons.settings),
-      //
-      //
-      //   isDropDown: true,
-      //   isIcon:  false,
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.YourServices,
-      //   labelName: 'Help',
-      //   icon: Icon(CupertinoIcons.info),
-      //
-      //
-      //   isDropDown: true,
-      //   isIcon:  false,
-      // ),
-
-      // DrawerList(
-      //   index: DrawerIndex.YourServices,
-      //   labelName: 'Your Services',
-      //   icon: Icon(Icons.select_all_rounded),
-      // ),
-      /*DrawerList(
-        index: DrawerIndex.Payment,
-        labelName: 'Payment',
-        icon: Icon(CupertinoIcons.creditcard),
-      ),*/
-      DrawerList(
-        index: DrawerIndex.Wallet,
-        labelName: 'Wallet',
-        icon: Icon(Icons.account_balance_wallet_outlined),
+        subList: ["View Balance", "Add Money"],
 
       ),
       DrawerList(
-        index: DrawerIndex.HOME,
+        index: DrawerIndex.YourServices,
         labelName: 'Home',
         icon: Icon(CupertinoIcons.home),
-
+        subList: ["Main Category", "Sub Category"],
+        isDropDown: true,
+        isIcon:  false,
       ),
-     /* DrawerList(
-        index: DrawerIndex.Passbook,
-        labelName: 'Passbook',
-        icon: Icon(CupertinoIcons.book),
-      ),*/
       DrawerList(
-
-        index: DrawerIndex.Settings,
+        index: DrawerIndex.YourServices,
+        labelName: 'Dispute',
+        icon: Icon(Icons.home_repair_service_outlined),
+        subList: ["View Balance", "Add Money"],
+        isDropDown: true,
+        isIcon:  false,
+      ),
+      DrawerList(
+        index: DrawerIndex.YourServices,
         labelName: 'Settings',
         icon: Icon(Icons.settings),
+        subList: ["Home", "Work","Profile"],
+        isDropDown: true,
+        isIcon:  false,
       ),
       DrawerList(
-        index: DrawerIndex.Help,
+        index: DrawerIndex.YourServices,
         labelName: 'Help',
         icon: Icon(CupertinoIcons.info),
+        subList: [ "Contact Support"],
+        isDropDown: true,
+        isIcon:  false,
       ),
-      DrawerList(
-        index: DrawerIndex.Refer,
-        labelName: 'Refer',
-        icon: Icon(CupertinoIcons.share),
-      ),
+      //  DrawerList(
+      //    index: DrawerIndex.YourServices,
+      //   labelName: 'Your Services',
+      //  icon: Icon(Icons.select_all_rounded),
+      // ),
+  //     /*DrawerList(
+  //       index: DrawerIndex.Payment,
+  //       labelName: 'Payment',
+  //       icon: Icon(CupertinoIcons.creditcard),
+  //     ),*/
+  //     DrawerList(
+  //       index: DrawerIndex.Wallet,
+  //       labelName: 'Wallet',
+  //       icon: Icon(Icons.account_balance_wallet_outlined),
+  //
+  //     ),
+  //     DrawerList(
+  //       index: DrawerIndex.HOME,
+  //       labelName: 'Home',
+  //       icon: Icon(CupertinoIcons.home),
+  //
+  //     ),
+  //    /* DrawerList(
+  //       index: DrawerIndex.Passbook,
+  //       labelName: 'Passbook',
+  //       icon: Icon(CupertinoIcons.book),
+  //     ),*/
+  //     DrawerList(
+  //
+  //       index: DrawerIndex.Settings,
+  //       labelName: 'Settings',
+  //       icon: Icon(Icons.settings),
+  //     ),
+  //     DrawerList(
+  //       index: DrawerIndex.Help,
+  //       labelName: 'Help',
+  //       icon: Icon(CupertinoIcons.info),
+  //     ),
+  //     DrawerList(
+  //       index: DrawerIndex.Refer,
+  //       labelName: 'Refer',
+  //       icon: Icon(CupertinoIcons.share),
+  //     ),
     ];
   }
 
@@ -251,7 +250,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
                               ),
                             ),
                           ),
-
                         ],
                       )
                     ],
@@ -412,26 +410,47 @@ class _HomeDrawerState extends State<HomeDrawer> {
               color: Colors.white,),
               leading: Icon(listData.icon.icon,color: Colors.white,),
               children: [
-
                     ListView.builder(
                       shrinkWrap: true,
-                itemCount: items.length,
+                itemCount: listData.subList.length,
                 itemBuilder: (context,index) {
                   return
                     ListTile(
-                        title: Text(listData.subList[index],style: TextStyle(
-                          color: Colors.white
+                        title: Text(listData.subList[index], style: TextStyle(
+                            color: Colors.white
                         ),),
-                  onTap:(){
-                  setState(() {
-
-                  });
-                  },
-
+                        onTap: () {
+                          setState(() {
+                            if (listData.subList[index].toString() ==
+                                'Past Services') {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PastServicesScreen()),
+                              );
+                            }
+                            else if (listData.subList[index].toString() ==
+                                'Upcoming Services') {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) =>
+                                    UpcomingServicesScreen()),
+                              );
+                            }
+                            else if (listData.subList[index].toString() ==
+                                'Cancelled Services') {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) =>
+                                    CancelledServicesScreen()),
+                              );
+                            }
+                          },
+                          );
+                        }
                     );
                 }
-                    ),
-
+                    )
               ],
             ):
 

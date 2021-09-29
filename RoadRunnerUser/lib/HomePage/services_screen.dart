@@ -98,8 +98,9 @@ class _ServicesScreenState extends State<ServicesScreen>
             fontWeight: FontWeight.w700,
           ),
         ),
-        bottom: const TabBar(
+        bottom:  TabBar(
         indicatorColor: Colors.black,
+        labelPadding: EdgeInsets.all(10),
         tabs: [
         Text("Past Services",style: TextStyle(
         color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),),
@@ -107,8 +108,8 @@ class _ServicesScreenState extends State<ServicesScreen>
         color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),),
         Text("Cancelled Services",style: TextStyle(
         color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),)
+          
     ]),
-
       ),
       body:
       StreamBuilder<PastTripListRespo>(

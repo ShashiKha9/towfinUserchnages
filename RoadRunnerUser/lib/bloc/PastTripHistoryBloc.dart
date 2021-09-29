@@ -48,10 +48,7 @@ class PastTripHistoryBloc {
 
     print("DISPOSED");
   }
-
   unSubscribeEvents(){
-
-
 
   }
 

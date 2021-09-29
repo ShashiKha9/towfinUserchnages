@@ -83,7 +83,8 @@ class _ServicesScreenState extends State<ServicesScreen>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
+    return DefaultTabController(length: 3,
+    child: Scaffold(
       appBar: AppBar(
         // shape: Border(
         //     bottom: BorderSide(color: AppTheme.colorPrimary, width: 2)),
@@ -97,6 +98,17 @@ class _ServicesScreenState extends State<ServicesScreen>
             fontWeight: FontWeight.w700,
           ),
         ),
+        bottom: const TabBar(
+        indicatorColor: Colors.black,
+        tabs: [
+        Text("Past Services",style: TextStyle(
+        color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),),
+        Text('Upcoming Services',style: TextStyle(
+        color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),),
+        Text("Cancelled Services",style: TextStyle(
+        color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),)
+    ]),
+
       ),
       body:
       StreamBuilder<PastTripListRespo>(
@@ -184,14 +196,15 @@ class _ServicesScreenState extends State<ServicesScreen>
           }),
 
     )
+    )
     ;
   }
 
   void _showMyDialog(
-    BuildContext context,
-    String msg,
-    String header,
-  ) {
+      BuildContext context,
+      String msg,
+      String header,
+      ) {
     showDialog(
         context: context,
         barrierDismissible: false,
@@ -232,11 +245,11 @@ class _ServicesScreenState extends State<ServicesScreen>
 class HomeListView extends StatelessWidget {
   const HomeListView(
       {Key key,
-      this.categoriesListData,
-      this.index,
-      this.callBack,
-      this.animationController,
-      this.animation})
+        this.categoriesListData,
+        this.index,
+        this.callBack,
+        this.animationController,
+        this.animation})
       : super(key: key);
 
   final AllPastTripList categoriesListData;
@@ -264,7 +277,7 @@ class HomeListView extends StatelessWidget {
           children: <Widget>[
             Padding(
                 padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 10),
+                EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -287,7 +300,7 @@ class HomeListView extends StatelessWidget {
                 )),
             Padding(
                 padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 15),
+                EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 15),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -315,7 +328,7 @@ class HomeListView extends StatelessWidget {
                 )),
             Padding(
                 padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 5),
+                EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 5),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -344,14 +357,14 @@ class HomeListView extends StatelessWidget {
                 )),
             Padding(
                 padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 5),
+                EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 5),
                 child: Divider(
                   height: 5,
                   color: AppTheme.grey61,
                 )),
             Padding(
                 padding:
-                    EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 0),
+                EdgeInsets.only(left: 25, right: 25, bottom: 5, top: 0),
                 child: ExpandablePanel(
                   theme: ExpandableThemeData(iconColor: AppTheme.grey61),
                   header: Padding(
@@ -392,7 +405,7 @@ class HomeListView extends StatelessWidget {
                                       )),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
@@ -422,7 +435,7 @@ class HomeListView extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
@@ -452,7 +465,7 @@ class HomeListView extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
@@ -482,7 +495,7 @@ class HomeListView extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
@@ -515,7 +528,7 @@ class HomeListView extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
@@ -547,13 +560,13 @@ class HomeListView extends StatelessWidget {
                               ),
                             )),
 
-                          new FadeInImage.assetNetwork(
+                        new FadeInImage.assetNetwork(
                           placeholder: 'assets/images/userImage.png',
                           image: categoriesListData.static_map,
                           width: size.width * 15,
                           height: size.height * 0.15,
                           fit: BoxFit.contain,
-                          )
+                        ),
 
 
                       ],
@@ -596,6 +609,7 @@ class NoDataFound extends StatelessWidget {
                 color: AppTheme.nearlyBlack,
                 fontWeight: FontWeight.w500,
                 fontFamily: AppTheme.fontName)),
+
       ],
     );
   }

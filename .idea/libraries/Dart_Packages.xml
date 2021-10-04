@@ -170,6 +170,34 @@
             </list>
           </value>
         </entry>
+        <entry key="firebase_core">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.7.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_core_platform_interface">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_core_web">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_dynamic_links">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_dynamic_links-0.5.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fixnum">
           <value>
             <list>
@@ -708,6 +736,10 @@
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.7.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_dynamic_links-0.5.3/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_image_compress-0.7.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.1/lib" />

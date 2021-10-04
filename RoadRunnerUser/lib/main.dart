@@ -7,6 +7,7 @@ import 'package:square_in_app_payments/models.dart';
 import 'HomePage/config.dart';
 import 'LoginSignup/Welcome/welcome_screen.dart';
 import 'app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +19,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+   // final Future <FirebaseApp> _fbApp= Firebase.initializeApp();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,

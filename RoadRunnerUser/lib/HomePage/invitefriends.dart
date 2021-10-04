@@ -71,7 +71,7 @@ class _InviteFriendState extends State<InviteFriend> {
                         ],
                       ),
                       child: Material(
-                        color: Colors.transparent,
+                        color: Colors.red,
                         child: InkWell(
                           onTap: () {
                             //method here for functionality

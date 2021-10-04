@@ -6,7 +6,7 @@
 <!--    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />-->
 
     <application
-        android:label="Road Runner"
+        android:label="Towfin"
        tools:replace="android:label"
 
     android:usesCleartextTraffic="true"

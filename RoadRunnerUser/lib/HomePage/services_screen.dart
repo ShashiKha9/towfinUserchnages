@@ -108,7 +108,6 @@ class _ServicesScreenState extends State<ServicesScreen>
         color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),),
         Text("Cancelled Services",style: TextStyle(
         color: Colors.black,fontSize: 10,fontWeight: FontWeight.bold),)
-          
     ]),
       ),
       body:

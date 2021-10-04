@@ -1,3 +1,4 @@
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -5,15 +6,49 @@ import 'package:share/share.dart';
 import '../app_theme.dart';
 
 class InviteFriend extends StatefulWidget {
+
   @override
   _InviteFriendState createState() => _InviteFriendState();
 }
 
 class _InviteFriendState extends State<InviteFriend> {
-  @override
-  void initState() {
-    super.initState();
+  Future<void> createDynamicLink() async {
+    var parameters = DynamicLinkParameters(
+      uriPrefix: 'https://roadrunnersclub/refer',
+      link: Uri.parse('https://roadrunnersclub.page.link/u9DC'),
+      androidParameters: AndroidParameters(
+        packageName: "com.roadrunnersclub",
+      ),
+    );
+    var dynamicUrl = await parameters.buildUrl();
+    var shortLink = await parameters.buildShortLink();
+    var shortUrl = shortLink.shortUrl;
+
+
+
+    @override
+    void initState() {
+      super.initState();
+      this.createDynamicLink();
+    }
+    void initDynamicLinks(BuildContext context) async {
+      await Future.delayed(Duration(seconds: 3));
+      var data = await FirebaseDynamicLinks.instance.getInitialLink();
+      var deepLink = data?.link;
+      final queryParams = deepLink.queryParameters;
+      if (queryParams.length > 0) {
+        var userName = queryParams['userId'];
+      }
+      FirebaseDynamicLinks.instance.onLink(onSuccess: (dynamicLink)
+      async {
+        var deepLink = dynamicLink?.link;
+        debugPrint('DynamicLinks onLink $deepLink');
+      }, onError: (e) async {
+        debugPrint('DynamicLinks onError $e');
+      });
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +110,7 @@ class _InviteFriendState extends State<InviteFriend> {
                         child: InkWell(
                           onTap: () {
                             //method here for functionality
-                            Share.share("Roadrunner Refer earn offer for sharing app. Each user can earn a cashback of up to 5\$ on every successful referral.  You can invite 5 friends in a calendar month and earn up to 5\$ with the Roadrunner Referral program and Earn offer. The cashback will be credited to your wallet after the first-ever payment of your invited friend topup their wallet.");
+                            Share.share("https://roadrunnersclub.page.link/u9DC");
 
                             },
                           child: Center(

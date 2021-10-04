@@ -19,7 +19,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   // final Future <FirebaseApp> _fbApp= Firebase.initializeApp();
+   final Future <FirebaseApp> _fbApp= Firebase.initializeApp();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,

@@ -14,7 +14,6 @@ class InviteFriend extends StatefulWidget {
 
 class _InviteFriendState extends State<InviteFriend> {
   Future<String> createDynamicLink() async {
-    print("check_ashsih4");
     final DynamicLinkParameters parameters = DynamicLinkParameters(
       uriPrefix: 'https://roadrunnersclub.page.link',
       link: Uri.parse('https://roadrunnersclub.page.link'),
@@ -22,13 +21,9 @@ class _InviteFriendState extends State<InviteFriend> {
           packageName: 'com.roadrunnersclub',
           minimumVersion: 1
       ),
-
     );
-    print("check_ashsih3");
     var dynamicUrl = await parameters.buildShortLink();
-    print("check_ashsih2:$dynamicUrl");
     final Uri shortUrl = dynamicUrl.shortUrl;
-    print("check_ashsih:"+shortUrl.toString());
     return shortUrl.toString();
   }
   @override
@@ -69,7 +64,7 @@ class _InviteFriendState extends State<InviteFriend> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(top: 8),
+                padding: const EdgeInsets.only(top: 100),
                 child: Text(
                   r'Refer now & earn 5$ ',
                   style: TextStyle(
@@ -126,8 +121,6 @@ class _InviteFriendState extends State<InviteFriend> {
                               setState(() {
                                 if(result is String){
                                   shortLink = result.toString();
-                                  print("check_ashsih123:"+shortLink);
-                                  print("check_ashsih1"+shortLink);
                                   Share.share(shortLink);
                                 }
                               });
@@ -146,7 +139,7 @@ class _InviteFriendState extends State<InviteFriend> {
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    'Share',
+                                    'Refer',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,

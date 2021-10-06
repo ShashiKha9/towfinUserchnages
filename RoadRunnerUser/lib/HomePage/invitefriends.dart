@@ -1,6 +1,9 @@
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:share/share.dart';
 import 'package:dotted_border/dotted_border.dart';
 
@@ -66,7 +69,7 @@ class _InviteFriendState extends State<InviteFriend> {
               Container(
                 padding: const EdgeInsets.only(top: 100),
                 child: Text(
-                  r'Refer now & earn 5$ ',
+                  r'Refer now & earn $5 ',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -100,9 +103,9 @@ class _InviteFriendState extends State<InviteFriend> {
                       width: 120,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Colors.red,
                         borderRadius:
-                        const BorderRadius.all(Radius.circular(4.0)),
+                        const BorderRadius.all(Radius.circular(8.0)),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                               color: Colors.grey.withOpacity(0.6),
@@ -110,8 +113,11 @@ class _InviteFriendState extends State<InviteFriend> {
                               blurRadius: 8.0),
                         ],
                       ),
-                      child: Material(
+                      child:Material(
                         color: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                        ),
                         child: InkWell(
                           onTap: () {
                             //method here for functionality

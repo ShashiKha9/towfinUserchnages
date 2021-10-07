@@ -1,7 +1,11 @@
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:roadrunner/HomePage/invitefriends.dart';
 import 'package:roadrunner/HomePage/services_screen.dart';
 import 'package:roadrunner/HomePage/setting_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:roadrunner/HomePage/sharelocation_screen.dart';
+import 'package:share/share.dart';
 
 import 'HomePage/help_screen.dart';
 import 'HomePage/home_screen.dart';
@@ -16,6 +20,15 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
+  LatLng _initialPosition;
+
+  Future <String> _getUserLocation() async {
+    var position = await GeolocatorPlatform.instance
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _initialPosition = LatLng(position.latitude, position.longitude);
+    });
+  }
   Widget screenView;
   DrawerIndex drawerIndex;
 
@@ -74,11 +87,26 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
           screenView = SettingsScreen();
         });
       } else if (drawerIndex == DrawerIndex.Refer) {
-
-         setState(() {
-           screenView = InviteFriend();
-
+        setState(() {
+          screenView = InviteFriend();
         });
+      }
+      else if (drawerIndex == DrawerIndex.ShareLocation) {
+
+        // setState(() {
+        //   // screenView = ShareLocationScreen();
+        //
+        //
+        // });
+        String location;
+        _getUserLocation().then((value) => {
+          setState(() {
+            location = _initialPosition.toString();
+            Share.share("https://www.google.com/maps/search/?api=1&query=${_initialPosition.latitude},${_initialPosition.longitude}");
+          }
+          )
+        });
+
       } else {
         //do in your way......
       }

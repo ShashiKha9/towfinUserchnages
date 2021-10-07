@@ -76,6 +76,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
         labelName: 'Refer',
         icon: Icon(CupertinoIcons.share),
       ),
+      DrawerList(
+        index: DrawerIndex.ShareLocation,
+        labelName: 'Share Location',
+        icon: Icon(CupertinoIcons.location),
+      ),
     ];
   }
 
@@ -191,6 +196,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                                   ),
                                 ),
                               ),
+
                             ],
                           )
                         ],
@@ -403,6 +409,7 @@ enum DrawerIndex {
   Settings,
   Help,
   Refer,
+  ShareLocation,
 }
 
 class DrawerList {

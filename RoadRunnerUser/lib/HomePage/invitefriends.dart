@@ -3,9 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:share/share.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:toast/toast.dart';
 
 import '../app_theme.dart';
 
@@ -16,6 +18,7 @@ class InviteFriend extends StatefulWidget {
 }
 
 class _InviteFriendState extends State<InviteFriend> {
+  String Text1 = "SQ172A";
   Future<String> createDynamicLink() async {
     final DynamicLinkParameters parameters = DynamicLinkParameters(
       uriPrefix: 'https://roadrunnersclub.page.link',
@@ -79,36 +82,47 @@ class _InviteFriendState extends State<InviteFriend> {
               Expanded(child: Padding(padding: EdgeInsets.all(10),
                 child:Center(
                 child: Container(
-                  height: 40,
+                  height: 47,
                   width: 120,
                   child:DottedBorder(
                     color: Colors.grey,
                     strokeWidth: 1,
                     child: Center(
-                      child:
-                      Text("SQ173A",style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold
-                      ),),
-                    )
-                  ),
-                ),
-                )
-              ),),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: Container(
-                      width: 120,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(8.0)),
-                        boxShadow: <BoxShadow>[
+                      child: Column(
+                        children: [
+                          Text(Text1,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                          InkWell(
+                            child: Text("Tap to Copy",style: TextStyle(fontSize: 12,color: Colors.grey),),
+                              onTap: (){
+                                Clipboard.setData(new ClipboardData(text: Text1)).then((_){
+                                  Toast.show("Copied to clipboard", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+                                });                        }
+                          )
+                        ],
+
+                        )
+
+                          )
+
+                          )
+                          ),
+                          ),
+                          )
+                          ),
+                          Expanded(
+                          child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                          child: Container(
+                          width: 120,
+                          height: 40,
+                          decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius:
+                          const BorderRadius.all(Radius.circular(8.0)),
+                          boxShadow: <BoxShadow>[
                           BoxShadow(
-                              color: Colors.grey.withOpacity(0.6),
+                          color: Colors.grey.withOpacity(0.6),
                               offset: const Offset(4, 4),
                               blurRadius: 8.0),
                         ],

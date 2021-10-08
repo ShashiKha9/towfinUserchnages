@@ -79,6 +79,13 @@
             </list>
           </value>
         </entry>
+        <entry key="clipboard_manager">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard_manager-0.0.4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="clock">
           <value>
             <list>
@@ -744,6 +751,7 @@
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_platform_interface-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard_manager-0.0.4/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.1+4/lib" />

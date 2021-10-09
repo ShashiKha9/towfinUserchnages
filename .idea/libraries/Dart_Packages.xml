@@ -79,13 +79,6 @@
             </list>
           </value>
         </entry>
-        <entry key="clipboard_manager">
-          <value>
-            <list>
-              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard_manager-0.0.4/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="clock">
           <value>
             <list>
@@ -485,6 +478,13 @@
             </list>
           </value>
         </entry>
+        <entry key="percent_indicator">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-2.1.9+1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="petitparser">
           <value>
             <list>
@@ -751,7 +751,6 @@
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_platform_interface-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0/lib" />
-      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clipboard_manager-0.0.4/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.1+4/lib" />
@@ -806,6 +805,7 @@
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1/lib" />
+      <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-2.1.9+1/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../ashish/flutter sdk/flutter_windows_1.17.4-stable/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.1/lib" />

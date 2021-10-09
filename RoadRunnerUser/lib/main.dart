@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:roadrunner/HomePage/PaymnetHistory_screen.dart';
+import 'package:roadrunner/HomePage/home_screen.dart';
+import 'package:roadrunner/HomePage/map_locationpicker.dart';
 import 'package:roadrunner/HomePage/sharelocation_screen.dart';
 import 'package:square_in_app_payments/in_app_payments.dart';
 import 'package:square_in_app_payments/models.dart';
+import 'HomePage/Rating&Reviews_screen.dart';
 import 'HomePage/config.dart';
 import 'LoginSignup/Welcome/welcome_screen.dart';
 import 'app_theme.dart';
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: PaymentHistoryScreen(),
+      home: RatingReviewScreen(),
     );
   }
 

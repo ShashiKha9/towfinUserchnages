@@ -78,13 +78,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-  clipboard_manager:
-    dependency: "direct main"
-    description:
-      name: clipboard_manager
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.4"
   clock:
     dependency: transitive
     description:
@@ -478,6 +471,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.9+1"
   petitparser:
     dependency: transitive
     description:

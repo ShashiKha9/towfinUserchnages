@@ -43,6 +43,7 @@ class ApiProvider {
   final String _pastHistoryTrip = "api/user/trips";
   final String _forgetpassword = "api/user/forgot/password";
   final String _addCard = "api/user/card";
+  final String _paymentHistory = "api/user/wallet/passbook";
   final int client_id = 4;
   final String client_secret = "JRpCkB9xFYFGAo4kCmvLnElvMqfGYVYw0J76toCq";
 
@@ -421,7 +422,12 @@ class ApiProvider {
       return SubServiceResponse.withError(_handleError(error));
     }
   }
-  Future<ProvidersListResponse> fetchAllProvidersListReq(BuildContext context, String accessToken,String tokenType,String serviceId,double currentLat,double currentLng) async {
+  ///start
+
+  ///////////////////////end
+
+
+    Future<ProvidersListResponse> fetchAllProvidersListReq(BuildContext context, String accessToken,String tokenType,String serviceId,double currentLat,double currentLng) async {
     ArsProgressDialog progressDialog = ArsProgressDialog(
         context,
         blur: 2,

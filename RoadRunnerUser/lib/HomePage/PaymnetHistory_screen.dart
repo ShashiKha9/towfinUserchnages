@@ -14,7 +14,7 @@ class PaymentHistoryScreen extends StatelessWidget{
             Stack(
               children:[
                 Image(image: AssetImage("assets/images/backgroundRed.jpg")),
-                Padding(padding: EdgeInsets.only(top: 90,left: 20),
+                Padding(padding: EdgeInsets.only(top: 100,left: 20),
                     child:  Text(("Payment History"),style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold,color: Colors.white),)
                 ),
         ]

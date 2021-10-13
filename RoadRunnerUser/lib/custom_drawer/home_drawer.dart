@@ -81,6 +81,16 @@ class _HomeDrawerState extends State<HomeDrawer> {
         labelName: 'Share Location',
         icon: Icon(CupertinoIcons.location),
       ),
+      DrawerList(
+        index: DrawerIndex.PaymentHistory,
+        labelName: 'Payment History',
+        icon: Icon(Icons.payment_rounded),
+      ),
+      DrawerList(
+        index: DrawerIndex.RatingReview,
+        labelName: 'Rating&Reviews',
+        icon: Icon(Icons.rate_review_outlined),
+      ),
     ];
   }
 
@@ -410,6 +420,8 @@ enum DrawerIndex {
   Help,
   Refer,
   ShareLocation,
+  PaymentHistory,
+  RatingReview,
 }
 
 class DrawerList {

@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
-final String baseUrl = "http://www.towfin.com/";
+final String baseUrl = "http://towfin.com/";
 
 
 

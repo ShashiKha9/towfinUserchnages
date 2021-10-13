@@ -12,7 +12,7 @@ class RatingReviewScreen extends StatelessWidget{
           child:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:[
-          Padding(padding: EdgeInsets.only(top: 50,left: 20),
+          Padding(padding: EdgeInsets.only(top: 60,left: 20),
     child:  Text("Rating&Reviews",style: TextStyle(
     fontSize: 32,fontWeight: FontWeight.w700),)
     ),

@@ -1,5 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:roadrunner/HomePage/PaymnetHistory_screen.dart';
+import 'package:roadrunner/HomePage/Rating&Reviews_screen.dart';
 import 'package:roadrunner/HomePage/invitefriends.dart';
 import 'package:roadrunner/HomePage/services_screen.dart';
 import 'package:roadrunner/HomePage/setting_screen.dart';
@@ -107,7 +109,15 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
           )
         });
 
-      } else {
+      } else if (drawerIndex == DrawerIndex.PaymentHistory) {
+        setState(() {
+          screenView = PaymentHistoryScreen();
+        });
+      } else if (drawerIndex == DrawerIndex.RatingReview) {
+        setState(() {
+          screenView = RatingReviewScreen();
+        });
+      }else {
         //do in your way......
       }
     }

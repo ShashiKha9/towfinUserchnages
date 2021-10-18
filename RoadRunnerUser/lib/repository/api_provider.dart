@@ -10,6 +10,7 @@ import 'package:roadrunner/Modals/RateYourTripRespo.dart';
 import 'package:roadrunner/Modals/approximateprice_respo.dart';
 import 'package:roadrunner/Modals/changepass_response.dart';
 import 'package:roadrunner/Modals/forgetpass_response.dart';
+import 'package:roadrunner/Modals/generate_ticket.dart';
 import 'package:roadrunner/Modals/login_response.dart';
 import 'package:roadrunner/Modals/past_trip_list_repo.dart';
 import 'package:roadrunner/Modals/providers_list_repo.dart';
@@ -46,6 +47,7 @@ class ApiProvider {
   final String _paymentHistory = "api/user/wallet/passbook";
   final int client_id = 4;
   final String client_secret = "JRpCkB9xFYFGAo4kCmvLnElvMqfGYVYw0J76toCq";
+  final String raisereq = "api/user/generate/ticket";
 
 
 
@@ -328,6 +330,40 @@ class ApiProvider {
       return SignUpResponse.withError(_handleError(error));
     }
   }
+  //raise req
+  Future<GenerateTicket> raiserequest(int _id,String _subject,String _description,BuildContext context) async {
+    ArsProgressDialog progressDialog = ArsProgressDialog(
+        context,
+        blur: 2,
+        backgroundColor: Color(0x33000000),
+        animationDuration: Duration(milliseconds: 500));
+
+    progressDialog.show();
+
+    try {
+      var params = {
+        "userid":_id,
+          "subject":_subject,
+          "description":_description
+      };
+
+      print(jsonEncode(params));
+
+      Response response = await _dio.post(baseUrl + raisereq, data:jsonEncode(params));
+
+      progressDialog.dismiss();
+
+      return GenerateTicket.fromJson(response.data);
+
+    } catch (error, stacktrace) {
+      showToast("Ticket already raised", context);
+
+      print("Exception occured: $error stackTrace: $stacktrace");
+      progressDialog.dismiss();
+      return GenerateTicket.withError(_handleError(error));
+    }
+  }
+  //end req
 
   Future<UserProfileRespo> getUserProfile(deviceId,BuildContext context, String accessToken,String tokenType) async {
     ArsProgressDialog progressDialog = ArsProgressDialog(

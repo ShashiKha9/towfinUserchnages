@@ -48,6 +48,7 @@ class LoginBloc {
   final BehaviorSubject<RateYourTripRespo> _subjectCancleTrip =
       BehaviorSubject<RateYourTripRespo>();
 
+
   loginReq(String emailId, String password, String deviceId,
       BuildContext context) async {
     LoginResponse response =

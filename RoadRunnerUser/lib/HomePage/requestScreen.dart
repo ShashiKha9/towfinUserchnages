@@ -1,5 +1,7 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:roadrunner/HomePage/ticketscreen.dart';
 
 class RequestScreen extends StatelessWidget{
   @override
@@ -34,13 +36,17 @@ appBar: AppBar(
 
                  ),
                  Padding(padding: EdgeInsets.all(20),
-               child:  RaisedButton(onPressed: (){},
-                   child: Text("chat now"),
+               child:  RaisedButton(onPressed: (){
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => TicketScreen()),
+                 );               },
+                   child: Text("raise a ticket"),
                    shape: RoundedRectangleBorder(
                      borderRadius: BorderRadius.circular(11),
-                     side: BorderSide(color: Colors.black),
+                     side: BorderSide(color: Colors.grey[800]),
                    ),
-                   color: Colors.red,
+                   color: Colors.red[500],
                    padding: EdgeInsets.symmetric(horizontal: 45,vertical: 12),
                )
                  )
@@ -67,7 +73,13 @@ appBar: AppBar(
           title: Text("My requests"),
           subtitle: Text("check updates on your service requests",
               style:TextStyle(color: Colors.grey[700]) ),
-          trailing: Icon(Icons.arrow_forward_ios,color: Colors.blue,),
+          trailing: Icon(Icons.arrow_forward_ios,color: Colors.black,),
+          onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TicketList()),
+            );
+          },
 
         ),
       )

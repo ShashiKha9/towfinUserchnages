@@ -18,6 +18,7 @@ import 'package:roadrunner/Modals/services_response.dart';
 import 'package:roadrunner/Modals/signup_response.dart';
 import 'package:roadrunner/Modals/req_ride_respo.dart';
 import 'package:roadrunner/Modals/sub_services_response.dart';
+import 'package:roadrunner/Modals/ticket_list_response.dart';
 import 'package:roadrunner/Modals/userprofile_response.dart';
 import 'package:roadrunner/Utils/helperutils.dart';
 import 'package:roadrunner/Utils/logging_interceptor.dart';
@@ -48,6 +49,7 @@ class ApiProvider {
   final int client_id = 4;
   final String client_secret = "JRpCkB9xFYFGAo4kCmvLnElvMqfGYVYw0J76toCq";
   final String raisereq = "api/user/generate/ticket";
+  final String _ticketlist = "api/user/ticket/list";
 
 
 
@@ -331,7 +333,7 @@ class ApiProvider {
     }
   }
   //raise req
-  Future<GenerateTicket> raiserequest(int _id,String _subject,String _description,BuildContext context) async {
+  Future<GenerateTicket> raiserequest(int _id,String _subject,String _description,String tokenType,String accessToken,BuildContext context) async {
     ArsProgressDialog progressDialog = ArsProgressDialog(
         context,
         blur: 2,
@@ -348,6 +350,10 @@ class ApiProvider {
       };
 
       print(jsonEncode(params));
+      print(tokenType.toString()+" ACCESS "+accessToken.toString());
+      _dio.options.headers = {"X-Requested-With":"XMLHttpRequest","Authorization" : tokenType+" "+accessToken};
+
+
 
       Response response = await _dio.post(baseUrl + raisereq, data:jsonEncode(params));
 
@@ -364,6 +370,41 @@ class ApiProvider {
     }
   }
   //end req
+  Future<Ticket_list_response> tickelist(int _id,String tokenType,String accessToken,BuildContext context) async {
+    ArsProgressDialog progressDialog = ArsProgressDialog(
+        context,
+        blur: 2,
+        backgroundColor: Color(0x33000000),
+        animationDuration: Duration(milliseconds: 500));
+
+    progressDialog.show();
+
+    try {
+      var params = {
+        "userid":_id,
+      };
+
+      print(jsonEncode(params));
+      print(tokenType.toString()+" ACCESS "+accessToken.toString());
+      _dio.options.headers = {"X-Requested-With":"XMLHttpRequest","Authorization" : tokenType+" "+accessToken};
+
+
+
+      Response response = await _dio.post(baseUrl + _ticketlist, data:jsonEncode(params));
+
+      progressDialog.dismiss();
+
+      return Ticket_list_response.fromJson(response.data);
+
+    } catch (error, stacktrace) {
+      showToast("Ticket already raised", context);
+
+      print("Exception occured: $error stackTrace: $stacktrace");
+      progressDialog.dismiss();
+      return Ticket_list_response.withError(_handleError(error));
+    }
+  }
+  //
 
   Future<UserProfileRespo> getUserProfile(deviceId,BuildContext context, String accessToken,String tokenType) async {
     ArsProgressDialog progressDialog = ArsProgressDialog(

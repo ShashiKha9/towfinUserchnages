@@ -40,8 +40,6 @@ class TicketScreen extends StatefulWidget {
       // timer =
       //     Timer.periodic(Duration(seconds: 2), (Timer t) =>     ticketlist(context, prefs.getString(SharedPrefsKeys.ACCESS_TOKEN),prefs.getString(SharedPrefsKeys.TOKEN_TYPE)));
 
-
-
       setState(() {
 
       });
@@ -176,6 +174,13 @@ class TicketList extends StatefulWidget {
 
     Future<void> initPreferences() async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
+      /*Ticket_list_response  response = await bloc.ticketlist(1, prefs.getString(SharedPrefsKeys.ACCESS_TOKEN),prefs.getString(SharedPrefsKeys.TOKEN_TYPE) , context);
+      print("hii="+ response.toString());*/
+
+      /*StreamBuilder<Ticket_list_response>(
+        stream: bloc.ticketList.stream,
+      );*/
+
       bloc.ticketlist(1, prefs.getString(SharedPrefsKeys.ACCESS_TOKEN),prefs.getString(SharedPrefsKeys.TOKEN_TYPE) , context);
       // timer =
       //     Timer.periodic(Duration(seconds: 2), (Timer t) =>     ticketlist(context, prefs.getString(SharedPrefsKeys.ACCESS_TOKEN),prefs.getString(SharedPrefsKeys.TOKEN_TYPE)));
@@ -220,7 +225,9 @@ class TicketList extends StatefulWidget {
             body:  TabBarView(children: [
               Padding(padding: EdgeInsets.only(top: 40),
             child:  Flexible(
-              child: StreamBuilder(builder: (context,snap) {
+              child: StreamBuilder<Ticket_list_response>(
+                stream: bloc.ticketList.stream,
+                  builder: (context,snap) {
                 return FutureBuilder<bool>(
                   future: postData(),
                     builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
@@ -230,7 +237,7 @@ class TicketList extends StatefulWidget {
                       else {
                         return ListView.separated(
                           padding: EdgeInsets.only(left: 10, right: 10),
-                          itemCount: 7,
+                          itemCount: snap.data.data.length,
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           separatorBuilder: (BuildContext context, int index) =>
@@ -250,13 +257,14 @@ class TicketList extends StatefulWidget {
                                 child: Column(
                                   children: <Widget>[
                                 ListTile(
-                                      title: Text(
-                                        snap.data.toString(), style: TextStyle(
+                                      title: Text(snap.data.data[index].subject,
+                                         style: TextStyle(
                                           fontWeight: FontWeight.w700),),
-                                      subtitle: Text("Status"),
+                                      subtitle: Text(snap.data.data[index].description),
                                       trailing: Text(
-                                        "Date & time", style: TextStyle(
-                                          fontWeight: FontWeight.w700
+                                        snap.data.data[index].status, style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                        color: Colors.lightGreenAccent
                                       ),),
                                     ),
                                   ],

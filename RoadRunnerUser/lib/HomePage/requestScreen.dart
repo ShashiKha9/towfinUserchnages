@@ -41,7 +41,9 @@ appBar: AppBar(
                    context,
                    MaterialPageRoute(builder: (context) => TicketScreen()),
                  );               },
-                   child: Text("raise a ticket"),
+                   child: Text("raise a ticket",style: TextStyle(
+                     color: Colors.white
+                   ),),
                    shape: RoundedRectangleBorder(
                      borderRadius: BorderRadius.circular(11),
                      side: BorderSide(color: Colors.grey[800]),
